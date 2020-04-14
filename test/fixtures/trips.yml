@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  biker: 
+  bike: one
+  name: MyString
+  start_city: MyString
+  dest_city: MyString
+  distance_miles: MyString
+  start_date: 2020-04-13 23:26:13
+  end_date: 2020-04-13 23:26:13
+
+two:
+  biker: 
+  bike: two
+  name: MyString
+  start_city: MyString
+  dest_city: MyString
+  distance_miles: MyString
+  start_date: 2020-04-13 23:26:13
+  end_date: 2020-04-13 23:26:13
