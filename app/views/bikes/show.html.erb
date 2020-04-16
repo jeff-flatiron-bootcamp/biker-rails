@@ -1,0 +1,7 @@
+<h2><%= session[:first_name]  %>'s bike</h2><br>
+Bike name: <%= @bike.bike_name %><br>
+Bike type: <%= @bike.bike_type %><br>
+Bike manufacturer: <%= @bike.manufacturer.name %><br>
+Bike stolen: <%= @bike.stolen.to_s %><br><br>
+
+<%= link_to("Edit", edit_bike_path(@bike.id))%><br>

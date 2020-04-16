@@ -1,0 +1,32 @@
+<h3>Profile for <%= @biker.first_name %> </h3>
+<%= link_to("Signout", logout_path_url ) %><br>
+<%= link_to("All Trips", trips_path) %>
+<h3>Name</h3>
+<%= @biker.biker_full_name %><br>
+
+<h3>User name</h3>
+<%= @biker.user_name %><br>
+
+<h3>Home City</h3>
+<%= @biker.home_city %><br>
+
+<h3>Bikes</h3> 
+<% @biker.bikes.each do |bike| %>
+    Name:<%= link_to(bike.bike_name, bike_path(bike)) %><br>
+    Manfacturer: <%= "#{bike.manufacturer.name}"%><br>
+    Bike Type: <%= "#{bike.bike_type.to_s}"%><br>
+    Stolen: <%= "#{bike.stolen.to_s}"%><br>
+<% end %>
+<br>
+<%= link_to("Create Bike", new_bike_path(@biker))%><br>
+<%= link_to("Manufacturers Index", manufacturers_path) %><br>
+
+
+<h3><%=@biker.first_name %>'s Trips</h3> <%= link_to("Create Trip", new_trip_path(@biker))%><br>
+Total Distance: <%= @biker.total_trip_distances %> miles<br><br>
+
+
+<% @trips.each do |trip| %>
+    <li><%= link_to(trip.name, trip_path(trip.id)) %>     |     <%= trip.distance_miles %> miles     |     <%= trip.biker.biker_full_name %>     |     <%= trip.start_date %></li>
+<% end %>
+

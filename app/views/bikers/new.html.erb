@@ -1,0 +1,27 @@
+
+<% if (@biker.errors.any?) %>
+<ul>    
+     <% @biker.errors.full_messages.each do |msg| %>
+    <span class="error_text">
+    <li> <%= msg %></li>
+     </span>
+    <% end %>
+</ul>
+<% end %>
+
+
+<p><%= image_tag("biking-image.jpg",width: '400px') %>
+
+<h2>Create Your Bike Account</h2>
+<%= form_for @biker do |f| %>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %><br><br>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %><br><br>
+    <%= f.label :home_city %><br>
+    <%= f.text_field :home_city %><br><br>
+    <%= f.label :user_name %><br>
+    <%= f.text_field :user_name %><br><br>
+    <%= f.submit %>
+<% end %>
+</p>

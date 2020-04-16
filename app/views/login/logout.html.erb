@@ -1,0 +1,9 @@
+<%= sleep 3 %>
+
+<% flash.each do |type, msg| %>
+  <div class="logout_text">
+    <%= msg %>
+  </div>
+<% end %>
+
+<% redirect_to login_path %>

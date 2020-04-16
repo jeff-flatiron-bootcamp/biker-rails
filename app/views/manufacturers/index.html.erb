@@ -1,0 +1,6 @@
+<h2>Manufacturers Index</h2>
+<ul>
+<% Manufacturer.all.each do |manu| %>
+<li><%= manu.name %>     |     <%= link_to(manu.url, manu.url)%></li>
+<% end %>
+</ul>

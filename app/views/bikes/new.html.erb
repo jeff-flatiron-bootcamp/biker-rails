@@ -1,0 +1,13 @@
+<h2>Create new bike for <%= session[:first_name]  %></h2>
+
+<%= form_for @bike do |f| %>
+    <%= f.hidden_field :biker_id, value: session[:user_id] %>
+    <%= f.label :bike_name %><br>
+    <%= f.text_field :bike_name %><br>
+    <%= f.label :bike_type %><br>
+    <%= f.text_field :bike_type %><br>
+    <%= f.label :stolen %><br>
+    <%= f.check_box :stolen %><br>
+    <%= f.collection_select :manufacturer_id, Manufacturer.all, :id, :name %><br><br>
+    <%= f.submit %>
+<% end %>

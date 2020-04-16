@@ -3,5 +3,10 @@ Rails.application.routes.draw do
   resources :bikes
   resources :manufacturers
   resources :bikers
+
+  get "/signup", to: "bikers#new", as: "signup"
+  get "/login", to: "login#new", as: "login_path"
+  post "/login", to: "login#verify"
+  get "/logout", to: "login#logout", as: "logout_path"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

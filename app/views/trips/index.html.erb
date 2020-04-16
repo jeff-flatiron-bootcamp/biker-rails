@@ -1,0 +1,5 @@
+<ul>
+<% @trips.each do |trip| %>
+    <li><%= link_to(trip.name, trip_path(trip.id)) %>     |     <%= trip.distance_miles %> miles     |     <%= trip.biker.biker_full_name %>     |     <%= trip.start_date %></li>
+<% end %>
+</ul>

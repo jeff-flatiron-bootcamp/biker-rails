@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+ body {background-color: grey;}
+
+.box {
+    position:relative;
+}
+.bet_time {
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+.error_text {
+    color: orange
+}

@@ -1,0 +1,18 @@
+
+<h2>Login</h2>
+<% flash.each do |type, msg| %>
+  <div class="error_text">
+    <%= msg %>
+  </div>
+<% end %>
+
+
+<p><%= image_tag("biking-image.jpg",width: '400px') %>
+
+
+<%= form_for :login do |f| %>
+    Username : <%= f.text_field :user_name %>
+    <%= f.submit "Login Up" %>
+<% end %>
+<br><br>
+<%= link_to("SignUp", signup_path) %>

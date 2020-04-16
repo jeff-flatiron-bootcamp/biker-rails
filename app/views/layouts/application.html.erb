@@ -9,7 +9,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body>    
+    <div class="box">    
+    <p class="bet_time"><h1>Biker</h1></p>
+    </div>
+    <% if(session[:user_id]) %>
+      <%= link_to("Back to my profile", biker_path(session[:user_id]))%><br>
+    <% end %>
     <%= yield %>
   </body>
 </html>

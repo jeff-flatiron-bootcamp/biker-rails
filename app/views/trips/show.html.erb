@@ -1,0 +1,31 @@
+<h2>Trip: <%= @trip.name %></h2>
+<h3>Rode by: <%= link_to(@trip.biker.biker_full_name, biker_path(@trip.biker.id)) %></h3>
+
+Bike name: <%= @trip.bike.bike_name %><br>
+Bike manufacturer: <%= @trip.bike.manufacturer.name %><br>
+Distance: <%= @trip.distance_miles %>miles<br>
+
+
+
+<br><br>
+
+<%= form_for @trip do |f| %>
+    <%= f.fields_for :trip_comments, @trip.trip_comments.build do |trip_comment_fields| %>        
+        <%= trip_comment_fields.text_area :comment %>        
+        <%= trip_comment_fields.hidden_field :biker_id, value: session[:user_id] %><br>
+    <% end %>
+    <%= f.submit "Add a comment"%>
+<% end %>
+
+<br>
+<br>
+
+<% @trip.newest_comments.each do |tc| %> 
+    <% if (tc.id != nil) %>  
+        <li><%= link_to(tc.biker.biker_full_name, biker_path(tc.biker)) %>     |     <%= " :#{tc.updated_at}" %> <br> Says"<%= tc.comment %>"</li><br>
+    <% end %>
+<% end %>
+
+
+
+

@@ -1,0 +1,16 @@
+<h2>Edit new bike for <%= session[:first_name]  %></h2>
+
+<%= form_for @bike do |f| %>
+    <%= f.label :bike_name %><br>
+    <%= f.text_field :bike_name %><br>
+    <%= f.label :bike_type %><br>
+    <%= f.text_field :bike_type %><br>
+    <%= f.label :stolen %><br>
+    <%= f.check_box :stolen %><br><br>
+    <%= f.label :manufacturer_id %><br>
+    <%= f.collection_select :manufacturer_id, Manufacturer.all, :id, :name %><br><br>
+    <%= f.submit %>
+<% end %>
+
+<br><br><br><br>
+<%= link_to("Profile", biker_path(session[:user_id]))%><br>
