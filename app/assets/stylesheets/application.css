@@ -27,3 +27,20 @@
 .error_text {
     color: orange
 }
+
+.bike_pics {
+    /* this is needed for the parent 
+       to have height. read more 
+       http://css-tricks.com/all-about-floats/
+    */
+    overflow:hidden;
+    /* adjust width of this element
+       if its width is not limited by its parent
+    width: 300px;
+    */
+  }
+
+.bike_pics li {
+    /* add margins and paddings as you wish */
+    float:left;
+}

@@ -9,5 +9,9 @@
     <%= f.label :stolen %><br>
     <%= f.check_box :stolen %><br>
     <%= f.collection_select :manufacturer_id, Manufacturer.all, :id, :name %><br><br>
+
+    <%= f.label :images %>
+    <%= f.file_field :images, multiple: true %>
+    <br><br>
     <%= f.submit %>
 <% end %>

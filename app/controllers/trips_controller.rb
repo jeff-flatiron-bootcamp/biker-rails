@@ -14,7 +14,8 @@ class TripsController < ApplicationController
     end
 
     def show        
-        @trip = Trip.find(params[:id])        
+        @trip = Trip.find(params[:id])           
+        @images = @trip.images  
     end
 
     def edit
@@ -31,9 +32,6 @@ class TripsController < ApplicationController
     end
 
     def update
-        # Time.use_zone(trip_params[:timezone]) do
-        #     @check_in.attributes = trip_params   
-        # end  
         @trip = Trip.find(params[:id])            
         @trip.update(trip_params)
         if(@trip)
@@ -55,10 +53,8 @@ class TripsController < ApplicationController
             :distance_miles,
             :start_date,
             :end_date,            
+            images: [],
             trip_comments_attributes: [:comment, :biker_id]
         )
     end
-
-
-
 end

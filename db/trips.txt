@@ -1,0 +1,41 @@
+{"trips": 
+    [
+      {
+        "name": "Hurricane Ridge",        
+        "distance_miles": 17.9
+      },
+      {
+        "name": "Mission Ridge",        
+        "distance_miles": 11
+      },
+      {
+        "name": "Mt. Spokane",        
+        "distance_miles": 12.8
+      },
+      {
+        "name": "McNeil Canyon Road",        
+        "distance_miles": 6
+      },      
+      {
+        "name": "Sherman Pass",        
+        "distance_miles": 22.5
+      },
+                  {
+        "name": "Chinook Pass",        
+        "distance_miles": 12.5
+      },
+            {
+        "name": "Badger Mountain Road",        
+        "distance_miles": 7.5
+      },
+      {
+        "name": "Mt. Baker",        
+        "distance_miles": 24
+      },
+      {
+        "name": "Rattlesnake Summit",        
+        "distance_miles": 10
+      }
+
+    ]
+}

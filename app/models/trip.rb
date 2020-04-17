@@ -4,7 +4,9 @@ class Trip < ApplicationRecord
   has_many :trip_comments
   has_many :bikers, through: :trip_comments
 
+  has_many_attached :images
   accepts_nested_attributes_for :trip_comments #, :reject_if => lambda { |c| c[:comment].blank? }
+  #accepts_nested_attributes_for :images 
 
   def trip_comments_attributes=(trip_comment_attributes)
     trip_comment_attributes.values.each do |trip_comment_attributes|
@@ -14,6 +16,16 @@ class Trip < ApplicationRecord
       end
     end
   end
+
+  
+  # def image_attributes=()
+  #   image_attributes.values.each do |image_attribute|
+  #     if image_attributes["image"].present?
+  #       image_attribute = TripComment.create(trip_comment_attributes)
+  #       self.trip_comments << trip_comment
+  #     end
+  #   end
+  # end
 
   def newest_comments
     self.trip_comments.order(updated_at: :desc)

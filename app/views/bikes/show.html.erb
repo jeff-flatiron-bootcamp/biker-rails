@@ -1,7 +1,21 @@
 <h2><%= session[:first_name]  %>'s bike</h2><br>
+
+<% if (@bike.biker.id == session[:user_id]) %>
+    <%= link_to("Edit", edit_bike_path(@bike.id))%><br>
+<% end %>
+
 Bike name: <%= @bike.bike_name %><br>
 Bike type: <%= @bike.bike_type %><br>
 Bike manufacturer: <%= @bike.manufacturer.name %><br>
 Bike stolen: <%= @bike.stolen.to_s %><br><br>
 
-<%= link_to("Edit", edit_bike_path(@bike.id))%><br>
+
+
+<h3>Images</h3>
+<ul class="bike_pics">
+    <% @bike.images.each do |image| %>    
+        <li>
+        <%= link_to( image_tag(image, :size => "200x100", :class => "thumbnail"), bikes_image_path("bike_id" => @bike, "image_id" => image))  %>        
+        </li>
+    <% end %>
+<ul>

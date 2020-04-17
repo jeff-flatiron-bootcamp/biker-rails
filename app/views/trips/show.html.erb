@@ -5,7 +5,10 @@ Bike name: <%= @trip.bike.bike_name %><br>
 Bike manufacturer: <%= @trip.bike.manufacturer.name %><br>
 Distance: <%= @trip.distance_miles %>miles<br>
 
-
+<h3>Images</h3>
+<% @trip.images.each do |image| %>
+    <%= image_tag(image)%>
+<% end %>
 
 <br><br>
 
@@ -22,7 +25,7 @@ Distance: <%= @trip.distance_miles %>miles<br>
 
 <% @trip.newest_comments.each do |tc| %> 
     <% if (tc.id != nil) %>  
-        <li><%= link_to(tc.biker.biker_full_name, biker_path(tc.biker)) %>     |     <%= " :#{tc.updated_at}" %> <br> Says"<%= tc.comment %>"</li><br>
+        <li><%= link_to(tc.biker.biker_full_name, biker_path(tc.biker)) %>|<%= " :#{tc.updated_at}" %> <br> Says"<%= tc.comment %>"</li><br>
     <% end %>
 <% end %>
 

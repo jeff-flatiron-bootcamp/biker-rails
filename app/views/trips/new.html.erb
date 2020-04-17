@@ -15,7 +15,11 @@
     <%= f.label :start_date %><br>
     <%= f.datetime_select  :start_date %><br>
     <%= f.label :end_date %><br>
-    <%= f.datetime_select :end_date %><br>
+    <%= f.datetime_select :end_date %><br><br>
+
+    <%= f.label :images %>
+    <%= f.file_field :images, multiple: true %>
+    <br><br>
     
     <%= f.submit %>
 <% end %>

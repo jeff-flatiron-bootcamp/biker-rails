@@ -43,7 +43,9 @@ class BikersController < ApplicationController
             :first_name,
             :last_name,
             :home_city,
-            :user_name
+            :user_name,
+            :password, 
+            :password_confirmation
         )
     end
 

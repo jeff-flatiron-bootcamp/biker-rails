@@ -14,12 +14,13 @@ class BikesController < ApplicationController
         end
     end
 
-    def edit        
+    def edit                
         @bike = Bike.find(params[:id])        
     end
 
-    def update
+    def update        
         @bike = Bike.find(params[:id])
+        
         @bike.update(bike_params)
         if(@bike)            
             redirect_to bike_path(@bike)
@@ -32,6 +33,19 @@ class BikesController < ApplicationController
         @bike = Bike.find(params[:id])
     end
 
+    def images        
+        @bike = Bike.find(params[:bike_id])
+        @image = @bike.images.find(params[:image_id])                
+    end
+
+    def destroyImage
+        @bike = Bike.find(params[:bike_id])
+        @bike.images.find(params[:image_id]).destroy
+
+        redirect_to edit_bike_path(@bike)
+        
+    end
+
     private
 
     def bike_params
@@ -40,7 +54,8 @@ class BikesController < ApplicationController
             :bike_type,
             :manufacturer_id,
             :biker_id,
-            :stolen
+            :stolen,
+            images: []
         )
     end
 end
